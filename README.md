@@ -15,7 +15,7 @@ Using AverageHash, we can make image to standard
 
 ### avhash.py
 How to make AverageHash
-![img1](./Images/image01.png)
+![img1](./Images/image02.png)
 
 ### avhash-search.py
 Search Similar Images to use AverageHash
