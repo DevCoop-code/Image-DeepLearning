@@ -20,3 +20,9 @@ How to make AverageHash
 
 ### avhash-search.py
 Search Similar Images to use AverageHash
+#### DataSet
+Caltech Computational Vision(http://www.vision.caltech.edu/archive.html)
+![img2](./Images/image03.png)
+
+#### Result Page
+![image3](./Images/image04.png)
