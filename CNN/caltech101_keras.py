@@ -2,6 +2,7 @@ from keras.models import Sequential
 from keras.layers import Convolution2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 import numpy as np
+import os
 
 categories = ["chair", "camera", "butterfly", "elephant", "flamingo"]
 nb_classes = len(categories)
@@ -41,7 +42,16 @@ model.add(Activation('softmax'))
 model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
 #Train the model
-model.fit(X_train, y_train, batch_size=32, nb_epoch=50)
+#Save the Model using h5py
+hdf5_file = "./image/5obj-model.hdf5"
+if os.path.exists(hdf5_file):
+    #Load the already trained model 
+    model.load_weights(hdf5_file)
+else:
+    model.fit(X_train, y_train, batch_size=32, nb_epoch=50)
+    #Save the trained model
+    model.save_weights(hdf5_file)
+
 
 #Estimate the model
 score = model.evaluate(X_test, y_test)
